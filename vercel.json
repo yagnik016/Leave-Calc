@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd FE && npm run build",
+  "buildCommand": "cd FE && npm install && npm run build",
   "outputDirectory": "FE/.next",
-  "installCommand": "npm install",
+  "installCommand": "npm install && cd BE && npm install",
   "rewrites": [
     {
       "source": "/api/(.*)",
