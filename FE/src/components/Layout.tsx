@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '@/lib/auth';
 
@@ -10,11 +10,16 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const router = useRouter();
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     if (!authService.isAuthenticated()) {
       router.push('/login');
+      return;
     }
+    
+    // Only get user data on client side
+    setUser(authService.getUser());
   }, [router]);
 
   return (
@@ -27,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-600">
-                {authService.getUser()?.email}
+                {user?.email}
               </span>
               <button
                 onClick={() => {

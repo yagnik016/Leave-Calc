@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "BE/src/main.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/BE/src/main.ts"
+    }
+  ],
+  "buildCommand": "cd FE && npm run build",
+  "outputDirectory": "FE/.next",
+  "installCommand": "cd FE && npm install && cd ../BE && npm install"
+}

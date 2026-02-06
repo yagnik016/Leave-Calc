@@ -13,22 +13,32 @@ export const authService = {
   },
 
   logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+    }
   },
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('token');
+    }
+    return null;
   },
 
   getUser(): any {
-    const userStr = localStorage.getItem('user');
-    return userStr ? JSON.parse(userStr) : null;
+    if (typeof window !== 'undefined') {
+      const userStr = localStorage.getItem('user');
+      return userStr ? JSON.parse(userStr) : null;
+    }
+    return null;
   },
 
   setAuth(authData: AuthResponse) {
-    localStorage.setItem('token', authData.access_token);
-    localStorage.setItem('user', JSON.stringify(authData.user));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('token', authData.access_token);
+      localStorage.setItem('user', JSON.stringify(authData.user));
+    }
   },
 
   isAuthenticated(): boolean {
