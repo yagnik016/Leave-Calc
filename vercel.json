@@ -2,6 +2,7 @@
   "buildCommand": "cd FE && npm install && npm run build",
   "outputDirectory": "FE/.next",
   "installCommand": "npm install --legacy-peer-deps && cd api && npm install --legacy-peer-deps",
+  "framework": null,
   "rewrites": [
     {
       "source": "/api/:path*",
