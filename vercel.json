@@ -3,9 +3,7 @@
   "outputDirectory": "FE/.next",
   "installCommand": "npm install",
   "functions": {
-    "api/index.js": {
-      "runtime": "@vercel/node"
-    }
+    "api/index.js": {}
   },
   "rewrites": [
     {
