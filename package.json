@@ -1,0 +1,16 @@
+{
+  "name": "leave-management-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack Leave Management Application",
+  "scripts": {
+    "build": "cd FE && npm run build",
+    "install": "npm install && cd FE && npm install && cd ../api && npm install"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "mongoose": "^7.0.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
