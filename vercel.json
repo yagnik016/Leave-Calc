@@ -3,9 +3,14 @@
   "outputDirectory": "FE/.next",
   "installCommand": "npm install --legacy-peer-deps && cd api && npm install --legacy-peer-deps",
   "framework": null,
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/:path*",
+      "source": "/api(/.*)?",
       "destination": "/api/index.js"
     }
   ]
