@@ -13,6 +13,9 @@ module.exports = async (req, res) => {
       credentials: true,
     });
     
+    // Set global prefix for API routes
+    app.setGlobalPrefix('api');
+    
     await app.init();
   }
   
