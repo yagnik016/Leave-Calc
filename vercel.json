@@ -2,9 +2,6 @@
   "buildCommand": "cd FE && npm run build",
   "outputDirectory": "FE/.next",
   "installCommand": "npm install",
-  "functions": {
-    "api/index.js": {}
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
