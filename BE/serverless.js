@@ -187,4 +187,7 @@ app.delete('/leaves/:id', authenticateToken, async (req, res) => {
   }
 });
 
-module.exports = app;
+// Export handler function for Vercel serverless
+module.exports = (req, res) => {
+  return app(req, res);
+};
