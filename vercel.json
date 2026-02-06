@@ -4,7 +4,7 @@
   "installCommand": "npm install --legacy-peer-deps && cd api && npm install --legacy-peer-deps",
   "framework": null,
   "functions": {
-    "api/index.js": {
+    "api/[...path].js": {
       "maxDuration": 30
     }
   }
